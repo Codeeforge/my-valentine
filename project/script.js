@@ -23,5 +23,5 @@ function handleNoClick() {
 }
 
 function handleYesClick() {
-    window.location.href = "ya.html";
+    window.location.href = "/project/ya.html";
 }
