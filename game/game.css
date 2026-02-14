@@ -1,0 +1,118 @@
+body {
+  background: #ffd6e8;  /* Diubah dari #fce4ec agar sama dengan valentine */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative; /* Untuk posisi love jatuh */
+}
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 10; /* Agar di atas love jatuh */
+}
+
+h1 {
+  color: #d32f2f;
+}
+
+/* BOARD */
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 12px;
+}
+
+/* CARD */
+.card {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 12px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  user-select: none;
+}
+
+.card:not(.flipped) {
+  color: transparent;
+}
+
+.card.flipped {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.card.matched {
+  background: #ffebf0;
+  box-shadow: 0 0 15px #ff80ab;
+  transform: scale(1.1);
+}
+
+/* SHAKE */
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  30% { transform: translateX(-8px); }
+  60% { transform: translateX(8px); }
+}
+
+/* GIFT BUTTON */
+.gift-button {
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: #ff4081;
+  color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none;
+  font-weight: bold;
+  animation: wiggle 0.6s ease-in-out infinite;
+  transition: transform 0.2s; /* Untuk efek scale saat klik */
+}
+
+.gift-button:active {
+  transform: scale(1.1); /* Perbesar sedikit saat diklik */
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* LOVE JATUH */
+.falling-love {
+  position: absolute;
+  font-size: 24px;
+  color: #ff4081;
+  animation: fall 3s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes fall {
+  0% {
+    top: -50px;
+    opacity: 1;
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+  }
+}
+
