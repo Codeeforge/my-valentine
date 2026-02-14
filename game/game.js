@@ -86,7 +86,7 @@ function launchConfetti() {
 function claimGift() {
   // Efek scale sudah di CSS
   setTimeout(() => {
-    window.location.href = '../valentine/valentine.html';
+    window.location.href = '../valentine/vt.html';
   }, 200);
 }
 
