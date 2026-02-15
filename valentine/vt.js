@@ -1,6 +1,4 @@
-/* ==========================
-   FLOATING HEARTS EFFECT
-========================== */
+/* FLOATING HEARTS EFFEK */
 function spawnHeart() {
     const heart = document.createElement("div");
     heart.textContent = "❤️";
@@ -18,9 +16,7 @@ function spawnHeart() {
 
 setInterval(spawnHeart, 300);
 
-/* ==========================
-   CONFETTI EFFECT
-========================== */
+/* CONFETTI EFFEK */
 function launchConfetti() {
     confetti({
         particleCount: 100,
@@ -31,16 +27,12 @@ function launchConfetti() {
     });
 }
 
-/* ==========================
-   EFEK TOMBOL DAN LAUNCH CONFETTI
-========================== */
+/* EFEK TOMBOL DAN LAUNCH CONFETTI */
 function claimGift() {
     launchConfetti();
 }
 
-/* ==========================
-   ANIMATIONS DEFINITIONS
-========================== */
+/* ANIMASI DEFININISI */
 const style = document.createElement("style");
 style.textContent = `
 

@@ -2,7 +2,7 @@ const board = document.getElementById("game-board");
 const giftButton = document.getElementById("gift-button");
 
 /* DATA */
-const emojis = ["❤️","🥰","😘","🌹","💐","🎁"];
+const emojis = ["❤️", "🥰", "😘", "🌹", "💐", "🎁"];
 const cards = [...emojis, ...emojis].sort(() => Math.random() - 0.5);
 
 let firstCard = null;
@@ -10,7 +10,7 @@ let lockBoard = false;
 let matchedCount = 0;
 
 /* CREATE CARDS */
-cards.forEach(value => {
+cards.forEach((value) => {
   const card = document.createElement("div");
   card.className = "card";
   card.dataset.value = value;
@@ -18,7 +18,7 @@ cards.forEach(value => {
   board.appendChild(card);
 });
 
-/* MULAI EFEK LOVE JATUH SEJAK AWAL */
+/* MULAI EFEK LOVE LABUH */
 startFallingLove();
 
 /* GAME LOGIC */
@@ -49,7 +49,6 @@ function checkMatch(secondCard) {
       setTimeout(() => {
         launchConfetti();
         giftButton.style.display = "block";
-        // Love jatuh sudah berjalan terus
       }, 400);
     }
     return;
@@ -77,27 +76,26 @@ function launchConfetti() {
     particleCount: 100,
     spread: 70,
     origin: { y: 0.6 },
-    shapes: ['heart'], // Bentuk hati
-    colors: ['#ff4081', '#d32f2f', '#fce4ec']
+    shapes: ["heart"],
+    colors: ["#ff4081", "#d32f2f", "#fce4ec"],
   });
 }
 
 /* EFEK TOMBOL DAN REDIRECT */
 function claimGift() {
-  // Efek scale sudah di CSS
   setTimeout(() => {
-    window.location.href = '../valentine/vt.html';
+    window.location.href = "../valentine/vt.html";
   }, 200);
 }
 
-/* LOVE JATUH */
+/* LOVE LABUH */
 function startFallingLove() {
   setInterval(() => {
     const love = document.createElement("div");
     love.className = "falling-love";
     love.textContent = "❤️";
     love.style.left = Math.random() * 100 + "vw";
-    love.style.animationDuration = (Math.random() * 2 + 2) + "s";
+    love.style.animationDuration = Math.random() * 2 + 2 + "s";
     document.body.appendChild(love);
 
     setTimeout(() => {
@@ -105,4 +103,3 @@ function startFallingLove() {
     }, 3000);
   }, 300);
 }
-

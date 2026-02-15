@@ -9,7 +9,7 @@ body {
     overflow: hidden;
 }
 
-/* Falling hearts */
+/* HATI LABUH */
 body::before {
     content: "❤️ 💗 💕 💓 💞";
     position: absolute;
@@ -84,11 +84,11 @@ body::before {
     cursor: pointer;
     font-weight: bold;
     animation: wiggle 0.6s ease-in-out infinite;
-    transition: transform 0.2s; /* Untuk efek scale saat klik */
+    transition: transform 0.2s; 
 }
 
 .gift-button:active {
-    transform: scale(1.1); /* Perbesar sedikit saat diklik */
+    transform: scale(1.1); 
 }
 
 @keyframes wiggle {
